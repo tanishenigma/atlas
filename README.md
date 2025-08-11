@@ -1,5 +1,7 @@
-# React + Vite
+# Apple Counter
 
-This project uses an image located at `./src/assets/image.png`.
+
+![Image](./src/assets/image.png)
 
 Simple Counter to count the number of apples in the container.
+
