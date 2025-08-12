@@ -12,9 +12,9 @@ export const Countries = ({ search, region }) => {
 
   return (
     <div className="m-5 items-center justify-center flex flex-wrap overflow-auto">
-      {searchBar.map((country, key) => (
+      {searchBar.map((country, index) => (
         <Card
-          key={country.cca3}
+          key={`${country.cca3}-${index}`}
           name={country.name.common}
           region={country.region}
           capital={country.capital}
