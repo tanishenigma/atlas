@@ -1,10 +1,27 @@
 import { ArrowDownWideNarrow } from "lucide-react";
-import React from "react";
+import React, { useState } from "react";
 
 const Filter = () => {
+  const [region, SetRegion] = useState(0);
+  const continent = [
+    "Asia",
+    "Oceania",
+    "Antarctica",
+    "Africa",
+    "Europe",
+    "North America",
+    "South America",
+  ];
+  const handleClick = () => {
+    SetRegion((prev) => !prev);
+    console.log(continent.value);
+  };
   return (
-    <div>
+    <div className="flex mr-5 justify-center  relative">
       <button
+        onClick={() => {
+          handleClick();
+        }}
         id="dropdownDefaultButton"
         data-dropdown-toggle="dropdown"
         type="button"
@@ -12,42 +29,24 @@ const Filter = () => {
         Filter By Region
         <ArrowDownWideNarrow />
       </button>
-      <div
-        id="dropdown"
-        className="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44 dark:bg-gray-700">
-        <ul
-          className="py-2 text-sm text-gray-700 dark:text-gray-200"
-          aria-labelledby="dropdownDefaultButton">
-          <li>
-            <a
-              href="#"
-              className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-              Dashboard
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-              Settings
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-              Earnings
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-              Sign out
-            </a>
-          </li>
-        </ul>
-      </div>
+      {region ? (
+        <div className="absolute top-12 flex flex-col flex-end bg-zinc-700 rounded-xl p-4 py-0 cursor-pointer pt-2 pb-2">
+          {continent.map((region) => (
+            <ul>
+              <li
+                className="hover:bg-zinc-600 p-2 rounded-lg"
+                onClick={() => {
+                  handleClick();
+                }}
+                value={region}>
+                {region}
+              </li>
+            </ul>
+          ))}
+        </div>
+      ) : (
+        ""
+      )}
     </div>
   );
 };

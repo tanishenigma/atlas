@@ -5,7 +5,7 @@ const Search = () => {
   return (
     <div>
       <form className="flex ">
-        <div className="p-2  bg-zinc-600  rounded-md text-white ">
+        <div className="p-2 ml-5 bg-zinc-600  rounded-md text-white ">
           <SearchIcon className="inline-block" />
           <input
             className="bg-transparent focus-within:outline-none pl-2"

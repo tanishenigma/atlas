@@ -28,7 +28,7 @@
 
 body {
   margin: 0;
-  overflow: hidden;
+  /* overflow: hidden; */
 
   display: flex;
   color: #ffffff;
