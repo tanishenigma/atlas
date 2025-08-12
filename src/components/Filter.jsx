@@ -1,20 +1,11 @@
 import { ArrowDownWideNarrow } from "lucide-react";
 import React, { useState } from "react";
 
-const Filter = () => {
-  const [region, SetRegion] = useState(0);
-  const continent = [
-    "Asia",
-    "Oceania",
-    "Antarctica",
-    "Africa",
-    "Europe",
-    "North America",
-    "South America",
-  ];
+const Filter = ({ setRegion }) => {
+  const [regional, SetRegional] = useState(0);
+  const continent = ["Asia", "Oceania", "Africa", "Europe", "Americas"];
   const handleClick = () => {
-    SetRegion((prev) => !prev);
-    console.log(continent.value);
+    SetRegional((prev) => !prev);
   };
   return (
     <div className="flex mr-5 justify-center  relative">
@@ -29,7 +20,7 @@ const Filter = () => {
         Filter By Region
         <ArrowDownWideNarrow />
       </button>
-      {region ? (
+      {regional ? (
         <div className="absolute top-12 flex flex-col flex-end bg-zinc-700 rounded-xl p-4 py-0 cursor-pointer pt-2 pb-2">
           {continent.map((region) => (
             <ul>
@@ -37,6 +28,7 @@ const Filter = () => {
                 className="hover:bg-zinc-600 p-2 rounded-lg"
                 onClick={() => {
                   handleClick();
+                  setRegion(region);
                 }}
                 value={region}>
                 {region}

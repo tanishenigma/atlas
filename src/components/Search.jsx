@@ -1,7 +1,7 @@
 import { SearchIcon } from "lucide-react";
 import React from "react";
 
-const Search = () => {
+const Search = ({ setSearch }) => {
   return (
     <div>
       <form className="flex ">
@@ -10,6 +10,9 @@ const Search = () => {
           <input
             className="bg-transparent focus-within:outline-none pl-2"
             placeholder="Search For a Country"
+            onChange={(e) => {
+              setSearch(e.target.value);
+            }}
           />
         </div>
       </form>

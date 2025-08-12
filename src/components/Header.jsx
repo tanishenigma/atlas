@@ -5,10 +5,12 @@ const Header = () => {
   const [theme, setTheme] = useState(0);
   return (
     <header className="flex justify-between items-center bg-zinc-800 top-0 w-full fixed left-0 z-50">
-      <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-20 py-2">
+      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-20 py-2">
         <div className="flex">
-          <h1 className="font-black tracking-tighter text-5xl">Atlas</h1>
-          <Globe className="" />
+          <h1 className="font-black tracking-tighter text-5xl t bg-gradient-to-tr">
+            Atlas
+          </h1>
+          <Globe className="text-white bg-gradient-to-tr from-red-600 to-violet-600 rounded-full" />
         </div>
         {/* {THEME TOGGLE} */}
       </div>
